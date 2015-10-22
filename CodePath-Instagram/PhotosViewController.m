@@ -75,7 +75,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     PhotoDetailsViewController *detailsView = [segue destinationViewController];
     NSIndexPath *indexPath = [self.photoTable indexPathForCell:sender];
-    detailsView.url = self.photos[indexPath.row][@"images"][@"high_resolution"][@"url"];
+    detailsView.url = self.photos[indexPath.row][@"images"][@"standard_resolution"][@"url"];
 }
 
 @end
