@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA8476CF1BD9978F001B0B77 /* PhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8476CE1BD9978F001B0B77 /* PhotoDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E07A3DC775370AF907984235 /* libPods-CodePath-Instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F158B76187E45665AC9879 /* libPods-CodePath-Instagram.a */; };
 		ECDF65D21BD98FAE00D5EF2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65D11BD98FAE00D5EF2C /* main.m */; };
 		ECDF65D51BD98FAE00D5EF2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65D41BD98FAE00D5EF2C /* AppDelegate.m */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		42B44CBE7A97DE553CE44C6E /* Pods-CodePath-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodePath-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodePath-Instagram/Pods-CodePath-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		98F158B76187E45665AC9879 /* libPods-CodePath-Instagram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodePath-Instagram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8476CD1BD9978F001B0B77 /* PhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailsViewController.h; sourceTree = "<group>"; };
+		AA8476CE1BD9978F001B0B77 /* PhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailsViewController.m; sourceTree = "<group>"; };
 		E5CC1C4C4ABA1BE7FFBC44C7 /* Pods-CodePath-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodePath-Instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodePath-Instagram/Pods-CodePath-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		ECDF65CD1BD98FAE00D5EF2C /* CodePath-Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodePath-Instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDF65D11BD98FAE00D5EF2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				ECDF65DE1BD98FAE00D5EF2C /* LaunchScreen.storyboard */,
 				ECDF65E11BD98FAE00D5EF2C /* Info.plist */,
 				ECDF65D01BD98FAE00D5EF2C /* Supporting Files */,
+				AA8476CD1BD9978F001B0B77 /* PhotoDetailsViewController.h */,
+				AA8476CE1BD9978F001B0B77 /* PhotoDetailsViewController.m */,
 			);
 			path = "CodePath-Instagram";
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				ECDF65D81BD98FAE00D5EF2C /* PhotosViewController.m in Sources */,
 				ECDF65D51BD98FAE00D5EF2C /* AppDelegate.m in Sources */,
 				ECDF65D21BD98FAE00D5EF2C /* main.m in Sources */,
+				AA8476CF1BD9978F001B0B77 /* PhotoDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

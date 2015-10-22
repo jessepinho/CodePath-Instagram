@@ -9,6 +9,7 @@
 #import "PhotosViewController.h"
 #import <UIImageView+AFNetworking.h>
 #import "PhotoCell.h"
+#import "PhotoDetailsViewController.h"
 
 @interface PhotosViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *photoTable;
@@ -69,6 +70,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.photos.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PhotoDetailsViewController *detailsView = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.photoTable indexPathForCell:sender];
+    detailsView.url = self.photos[indexPath.row][@"images"][@"high_resolution"][@"url"];
 }
 
 @end
