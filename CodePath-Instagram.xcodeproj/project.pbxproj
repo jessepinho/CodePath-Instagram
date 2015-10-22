@@ -14,6 +14,7 @@
 		ECDF65DB1BD98FAE00D5EF2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECDF65D91BD98FAE00D5EF2C /* Main.storyboard */; };
 		ECDF65DD1BD98FAE00D5EF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECDF65DC1BD98FAE00D5EF2C /* Assets.xcassets */; };
 		ECDF65E01BD98FAE00D5EF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECDF65DE1BD98FAE00D5EF2C /* LaunchScreen.storyboard */; };
+		ECDF65E91BD9941E00D5EF2C /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65E81BD9941E00D5EF2C /* PhotoCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		ECDF65DC1BD98FAE00D5EF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECDF65DF1BD98FAE00D5EF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECDF65E11BD98FAE00D5EF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECDF65E71BD9941E00D5EF2C /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		ECDF65E81BD9941E00D5EF2C /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				ECDF65D61BD98FAE00D5EF2C /* PhotosViewController.h */,
 				ECDF65D71BD98FAE00D5EF2C /* PhotosViewController.m */,
 				ECDF65D91BD98FAE00D5EF2C /* Main.storyboard */,
+				ECDF65E71BD9941E00D5EF2C /* PhotoCell.h */,
+				ECDF65E81BD9941E00D5EF2C /* PhotoCell.m */,
 				ECDF65DC1BD98FAE00D5EF2C /* Assets.xcassets */,
 				ECDF65DE1BD98FAE00D5EF2C /* LaunchScreen.storyboard */,
 				ECDF65E11BD98FAE00D5EF2C /* Info.plist */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDF65E91BD9941E00D5EF2C /* PhotoCell.m in Sources */,
 				ECDF65D81BD98FAE00D5EF2C /* PhotosViewController.m in Sources */,
 				ECDF65D51BD98FAE00D5EF2C /* AppDelegate.m in Sources */,
 				ECDF65D21BD98FAE00D5EF2C /* main.m in Sources */,

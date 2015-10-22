@@ -7,8 +7,11 @@
 //
 
 #import "PhotosViewController.h"
+#import <UIImageView+AFNetworking.h>
+#import "PhotoCell.h"
 
-@interface PhotosViewController ()
+@interface PhotosViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *photoTable;
 @property NSArray* photos;
 
 @end
@@ -17,6 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.photoTable.dataSource = self;
+    self.photoTable.delegate = self;
+    [self loadPhotos];
+}
+
+- (void)loadPhotos {
     NSString *urlString = @"https://api.instagram.com/v1/media/popular?client_id=6e0de7ee68c94e08a3448ccbe6c9d367";
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -37,8 +46,8 @@
                                                     [NSJSONSerialization JSONObjectWithData:data
                                                                                     options:kNilOptions
                                                                                       error:&jsonError];
-                                                    NSLog(@"Response: %@", responseDictionary[@"data"]);
                                                     self.photos = responseDictionary[@"data"];
+                                                    [self.photoTable reloadData];
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
                                                 }
@@ -49,6 +58,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PhotoCell *cell = [self.photoTable dequeueReusableCellWithIdentifier:@"photoCell"];
+    NSURL *url = [NSURL URLWithString:self.photos[indexPath.row][@"images"][@"low_resolution"][@"url"]];
+    [cell.photoView setImageWithURL:url];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.photos.count;
 }
 
 @end
