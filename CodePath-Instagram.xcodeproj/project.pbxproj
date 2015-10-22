@@ -10,7 +10,7 @@
 		E07A3DC775370AF907984235 /* libPods-CodePath-Instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F158B76187E45665AC9879 /* libPods-CodePath-Instagram.a */; };
 		ECDF65D21BD98FAE00D5EF2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65D11BD98FAE00D5EF2C /* main.m */; };
 		ECDF65D51BD98FAE00D5EF2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65D41BD98FAE00D5EF2C /* AppDelegate.m */; };
-		ECDF65D81BD98FAE00D5EF2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65D71BD98FAE00D5EF2C /* ViewController.m */; };
+		ECDF65D81BD98FAE00D5EF2C /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDF65D71BD98FAE00D5EF2C /* PhotosViewController.m */; };
 		ECDF65DB1BD98FAE00D5EF2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECDF65D91BD98FAE00D5EF2C /* Main.storyboard */; };
 		ECDF65DD1BD98FAE00D5EF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECDF65DC1BD98FAE00D5EF2C /* Assets.xcassets */; };
 		ECDF65E01BD98FAE00D5EF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECDF65DE1BD98FAE00D5EF2C /* LaunchScreen.storyboard */; };
@@ -24,8 +24,8 @@
 		ECDF65D11BD98FAE00D5EF2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECDF65D31BD98FAE00D5EF2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ECDF65D41BD98FAE00D5EF2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ECDF65D61BD98FAE00D5EF2C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ECDF65D71BD98FAE00D5EF2C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ECDF65D61BD98FAE00D5EF2C /* PhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		ECDF65D71BD98FAE00D5EF2C /* PhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		ECDF65DA1BD98FAE00D5EF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECDF65DC1BD98FAE00D5EF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECDF65DF1BD98FAE00D5EF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 			children = (
 				ECDF65D31BD98FAE00D5EF2C /* AppDelegate.h */,
 				ECDF65D41BD98FAE00D5EF2C /* AppDelegate.m */,
-				ECDF65D61BD98FAE00D5EF2C /* ViewController.h */,
-				ECDF65D71BD98FAE00D5EF2C /* ViewController.m */,
+				ECDF65D61BD98FAE00D5EF2C /* PhotosViewController.h */,
+				ECDF65D71BD98FAE00D5EF2C /* PhotosViewController.m */,
 				ECDF65D91BD98FAE00D5EF2C /* Main.storyboard */,
 				ECDF65DC1BD98FAE00D5EF2C /* Assets.xcassets */,
 				ECDF65DE1BD98FAE00D5EF2C /* LaunchScreen.storyboard */,
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECDF65D81BD98FAE00D5EF2C /* ViewController.m in Sources */,
+				ECDF65D81BD98FAE00D5EF2C /* PhotosViewController.m in Sources */,
 				ECDF65D51BD98FAE00D5EF2C /* AppDelegate.m in Sources */,
 				ECDF65D21BD98FAE00D5EF2C /* main.m in Sources */,
 			);
