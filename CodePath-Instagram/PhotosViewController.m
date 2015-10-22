@@ -14,6 +14,7 @@
 @interface PhotosViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *photoTable;
 @property NSArray* photos;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -24,6 +25,13 @@
     self.photoTable.dataSource = self;
     self.photoTable.delegate = self;
     [self loadPhotos];
+    [self setUpRefreshControl];
+}
+
+- (void)setUpRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(loadPhotos) forControlEvents:UIControlEventValueChanged];
+    [self.photoTable insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)loadPhotos {
@@ -41,6 +49,7 @@
                                             completionHandler:^(NSData * _Nullable data,
                                                                 NSURLResponse * _Nullable response,
                                                                 NSError * _Nullable error) {
+                                                [self.refreshControl endRefreshing];
                                                 if (!error) {
                                                     NSError *jsonError = nil;
                                                     NSDictionary *responseDictionary =
