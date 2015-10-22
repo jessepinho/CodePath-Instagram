@@ -13,7 +13,7 @@
 
 @interface PhotosViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *photoTable;
-@property NSArray* photos;
+@property NSMutableArray* photos;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.photoTable.dataSource = self;
     self.photoTable.delegate = self;
+    self.photos = [[NSMutableArray alloc] init];
     [self loadPhotos];
     [self setUpRefreshControl];
 }
@@ -56,7 +57,8 @@
                                                     [NSJSONSerialization JSONObjectWithData:data
                                                                                     options:kNilOptions
                                                                                       error:&jsonError];
-                                                    self.photos = responseDictionary[@"data"];
+                                                    NSArray *newPhotos = responseDictionary[@"data"];
+                                                    [self.photos addObjectsFromArray:newPhotos];
                                                     [self.photoTable reloadData];
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
@@ -71,10 +73,29 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self isLastPhoto:indexPath]) {
+        [self triggerInfiniteScroll];
+    }
     PhotoCell *cell = [self.photoTable dequeueReusableCellWithIdentifier:@"photoCell"];
     NSURL *url = [NSURL URLWithString:self.photos[indexPath.section][@"images"][@"low_resolution"][@"url"]];
     [cell.photoView setImageWithURL:url];
     return cell;
+}
+
+- (BOOL)isLastPhoto:(NSIndexPath *)indexPath {
+    return indexPath.section == self.photos.count - 1;
+}
+
+- (void)triggerInfiniteScroll {
+    [self loadPhotos];
+    
+    UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    UIActivityIndicatorView *loadingView =
+    [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [loadingView startAnimating];
+    loadingView.center = tableFooterView.center;
+    [tableFooterView addSubview:loadingView];
+    self.photoTable.tableFooterView = tableFooterView;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
