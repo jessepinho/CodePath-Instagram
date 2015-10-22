@@ -72,19 +72,44 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCell *cell = [self.photoTable dequeueReusableCellWithIdentifier:@"photoCell"];
-    NSURL *url = [NSURL URLWithString:self.photos[indexPath.row][@"images"][@"low_resolution"][@"url"]];
+    NSURL *url = [NSURL URLWithString:self.photos[indexPath.section][@"images"][@"low_resolution"][@"url"]];
     [cell.photoView setImageWithURL:url];
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    [headerView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.9]];
+    
+    UIImageView *profileView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
+    [profileView setClipsToBounds:YES];
+    profileView.layer.cornerRadius = 15;
+    profileView.layer.borderColor = [UIColor colorWithWhite:0.7 alpha:0.8].CGColor;
+    profileView.layer.borderWidth = 1;
+    
+    // Use the section number to get the right URL
+    NSString *profileImageUrl = self.photos[section][@"user"][@"profile_picture"];
+    [profileView setImageWithURL:[NSURL URLWithString:profileImageUrl]];
+    
+    [headerView addSubview:profileView];
+    
+    // Add a UILabel for the username here
+    
+    return headerView;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return self.photos.count;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     PhotoDetailsViewController *detailsView = [segue destinationViewController];
     NSIndexPath *indexPath = [self.photoTable indexPathForCell:sender];
-    detailsView.url = self.photos[indexPath.row][@"images"][@"standard_resolution"][@"url"];
+    detailsView.url = self.photos[indexPath.section][@"images"][@"standard_resolution"][@"url"];
 }
 
 @end
